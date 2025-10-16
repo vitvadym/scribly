@@ -1,0 +1,21 @@
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.animate {
+  animation: pulse 0.7s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  padding: 1rem;
+}
+
+.imageWrapper {
+  width: 100px;
+  height: 100px;
+  position: relative;
+}
+
+.image {
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.content {
+  flex: 1;
+}
+
+.bio {
+  opacity: 0.8;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}

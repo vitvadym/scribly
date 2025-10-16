@@ -1,0 +1,131 @@
+.embla {
+  overflow: hidden;
+}
+.emblaContainer {
+  display: flex;
+}
+.emblaSlide {
+  flex: 0 0 100%;
+  min-width: 0;
+}
+
+.navigation {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+}
+
+.title {
+  font-size: 2rem;
+  color: var(--color-text);
+  text-align: center;
+  margin-top: 20px;
+}
+
+.post {
+  margin-top: 30px;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+}
+
+.imgContainer {
+  flex: 1;
+  height: 500px;
+  position: relative;
+}
+
+.image {
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.textContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.postTitle {
+  font-size: 40px;
+}
+
+.postDesc {
+  font-size: 20px;
+  font-weight: 300;
+  color: var(--color-text);
+  display: -webkit-box;
+  -webkit-line-clamp: 3; 
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.skeleton {
+  background-color: #e0e0e0;
+  border-radius: 4px;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+/* Variants for shape/size */
+.skeletonTitle {
+  width: 70%;
+  height: 40px;
+}
+
+.skeletonText {
+  width: 90%;
+  height: 20px;
+}
+
+@media (max-width: 1024px) {
+  .imgContainer {
+    height: 300px;
+  }
+  .postTitle {
+    font-size: 30px;
+  }
+  .skeletonTitle {
+    height: 30px;
+  }
+  .skeletonText {
+    height: 18px;
+  }
+}
+
+@media (max-width: 640px) {
+  .post {
+    display: block;
+  }
+
+  .imgContainer {
+    height: 200px;
+  }
+  .postTitle {
+    font-size: 20px;
+    margin-top: 10px;
+  }
+
+  .postDesc {
+    font-size: 16px;
+  }
+  .skeletonTitle {
+    height: 20px;
+  }
+  .skeletonText {
+    height: 16px;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}

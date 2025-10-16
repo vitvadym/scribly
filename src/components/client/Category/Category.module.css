@@ -1,0 +1,50 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: center; */
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.aside {
+  display: flex;
+  border: 1px solid var(--color-border);
+  border-radius: 1rem;
+  padding: 2rem;
+  margin-bottom: 0;
+}
+
+.aside span {
+  width: fit-content;
+}
+
+.title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+.category {
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.isBadge {
+  border-radius: 1rem;
+  padding: 5px 10px;
+  font-size: 0.7rem;
+}
+
+.category:hover {
+  opacity: 0.8;
+}
+
+@media (max-width: 475px) {
+  .aside {
+    padding: 1rem;
+  }
+
+  .container {
+    margin-bottom: 0;
+  }
+}

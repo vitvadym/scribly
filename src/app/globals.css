@@ -1,0 +1,145 @@
+:root {
+  --color-primary: #213448;
+  --color-secondary: #547792;
+  --color-bg: #fdfdfd;
+  --color-surface: #ffffff;
+  --color-text: #1c1c1c;
+  --color-text-muted: #6b7280;
+  --color-accent: #ecefca;
+  --color-border: #e5e7eb;
+  --color-error: #dc2626;
+  --color-success: #059669;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.theme-dark {
+  --color-bg: #1c1c1c;
+  --color-text: #fdfdfd;
+  --color-border: #4b5563;
+}
+
+.theme-light {
+  --color-bg: #fdfdfd;
+  --color-text: #1c1c1c;
+}
+
+.page-container {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  transition: background-color 0.2s ease-in-out;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 1536px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.content {
+  flex: 1;
+}
+
+/* editor */
+.editor [role='textbox'] {
+  margin-top: 1rem;
+  outline: none;
+  min-height: 500px;
+}
+
+.codeBlock {
+  background-color: var(--color-primary);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  /* overflow: scroll; */
+  color: var(--color-surface);
+}
+
+.bulletList {
+  list-style-type: disc;
+  padding-left: 1.5rem;
+  margin: 1rem 0;
+}
+
+.orderedList {
+  list-style-type: decimal;
+  padding-left: 1.5rem;
+  margin: 1rem 0;
+}
+
+.blockquote {
+  border-left: 4px solid var(--color-border);
+  padding-left: 1rem;
+  margin: 1rem 0;
+  color: var(--text-color);
+}
+
+.empty:first-child::before {
+  color: var(--color-text-muted);
+  font-size: 2rem;
+  opacity: 0.5;
+  content: attr(data-placeholder);
+}
+
+.editor .tiptap p.is-editor-empty:first-child::before {
+  color: #adb5bd;
+  content: attr(data-placeholder);
+  height: 0;
+  pointer-events: none;
+}
+
+
+
+@media (max-width: 1536px) {
+  .wrapper {
+    max-width: 1366px;
+  }
+}
+
+@media (max-width: 1280px) {
+  .wrapper {
+    max-width: 1024px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .wrapper {
+    max-width: 768px;
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    max-width: 640px;
+  }
+}
+
+@media (max-width: 640px) {
+  .wrapper {
+    max-width: 475px;
+  }
+}
+
+@media (max-width: 475px) {
+  .wrapper {
+    max-width: 375px;
+  }
+}

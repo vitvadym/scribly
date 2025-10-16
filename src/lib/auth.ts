@@ -40,6 +40,7 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
         const { email, password } = credentials;
 
         const user = await getUserByEmail(email as string);
+        console.log('authorize user', user)
 
         if (user && user.password === password) {
           const { role, name, id, image, email } = user as {
@@ -67,31 +68,10 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
   ],
 
   callbacks: {
-    async signIn({ profile, account }) {
-      if (account?.provider === 'credentials') return true;
-      if (!profile?.email || !profile?.name) return false;
 
-      // const { email, name } = profile;
-
-      try {
-        // const existingUser = await getUserByEmail(email);
-        // if (!existingUser) {
-        //   await sendWelcomeEmail(email, name);
-        // }
-
-        return true;
-      } catch (error) {
-        console.error('Error during signIn callback:', error);
-        return false;
-      }
-    },
-    async jwt({ token, session }) {
-      console.log('jwt token', token);
-      console.log('jwt session', session);
-
+    async jwt({ token }) {
       if (token.sub) {
         const user = await getUserById(token.sub);
-        console.log('jwt user', user);
         token.role = user?.role;
         token.id = user?.id;
       }
